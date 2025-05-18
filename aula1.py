@@ -5,7 +5,10 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 import numpy as np
 
-df = pd.read_csv('titanic3.csv', sep=";", low_memory=False)
+if 'df' not in st.session_state:
+    st.session_state['df'] = pd.read_csv('titanic3.csv', sep=";", low_memory=False)
+
+df = st.session_state['df']
 
 # Sidebar Filters
 st.sidebar.title('Filtros')
