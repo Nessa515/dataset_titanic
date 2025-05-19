@@ -10,13 +10,13 @@ if 'df' not in st.session_state:
 
 df = st.session_state['df']
 
-# Sidebar Filters
+# Menu de filtros
 st.sidebar.title('Filtros')
 selected_sex = st.sidebar.multiselect('Sexo', options=['male', 'female'], default=[])
 selected_pclass = st.sidebar.multiselect('Classe', options=[1, 2, 3], default=[])
 selected_survived = st.sidebar.multiselect('Sobreviveu', options=[0, 1], default=[])
 
-# Applying filters
+# Aplicando filtros
 filtered_df = df[(df['sex'].isin(selected_sex)) &
                  (df['pclass'].isin(selected_pclass)) &
                  (df['survived'].isin(selected_survived))]
